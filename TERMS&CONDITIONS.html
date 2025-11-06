@@ -4,42 +4,174 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Syne&display=swap" />
-    <!-- Added Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- 8K Optimized Meta Tags -->
+    <meta name="theme-color" content="#5865F2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
     <title>MOODY - Terms and Conditions</title>
     <style>
+      :root {
+        --primary: #5865F2;
+        --secondary: #7289DA;
+        --accent: #FF6B6B;
+        --accent2: #4ECDC4;
+        --accent3: #FFD93D;
+        --dark: #1a1a2e;
+        --darker: #0f0f1a;
+        --light: #ffffff;
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 16px; /* Base font size for 1080p */
+      }
+
       body {
-        background: linear-gradient(135deg, rgba(88, 101, 242, 0.8), rgba(114, 137, 218, 0.6), rgba(255, 107, 107, 0.4)), url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80');
+        background: linear-gradient(135deg, rgba(88, 101, 242, 0.8), rgba(114, 137, 218, 0.6), rgba(255, 107, 107, 0.4)), 
+                    url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&auto=format&fit=crop&w=3840&q=80');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
         font-family: "Syne", sans-serif;
-        margin: 0;
-        padding: 0;
         min-height: 100vh;
-        color: #ffffff;
+        color: var(--light);
         overflow-x: hidden;
+        line-height: 1.6;
       }
 
-      /* Animated background particles for music vibe */
-      body::before {
-        content: '';
-        position: absolute;
+      /* 8K Media Query - Scale up for ultra-high resolution */
+      @media (min-width: 1921px) and (min-height: 1081px) {
+        html {
+          font-size: 20px; /* Scale up base font size for 4K+ */
+        }
+        
+        .container {
+          max-width: 1200px;
+        }
+        
+        .terms-content {
+          padding: 50px;
+          border-radius: 25px;
+        }
+        
+        .title {
+          font-size: 3.5em;
+        }
+        
+        .logo {
+          font-size: 4em;
+        }
+        
+        .section-title {
+          font-size: 2em;
+        }
+        
+        .section-content {
+          font-size: 1.2em;
+          line-height: 1.8;
+        }
+        
+        .nav-button {
+          padding: 18px 30px;
+          font-size: 1.2em;
+          min-width: 250px;
+        }
+        
+        .highlight {
+          padding: 4px 10px;
+          font-size: 1.1em;
+        }
+      }
+
+      /* 8K Media Query - Further scaling for true 8K */
+      @media (min-width: 7681px) {
+        html {
+          font-size: 32px;
+        }
+        
+        .container {
+          max-width: 2000px;
+        }
+        
+        .terms-content {
+          padding: 80px;
+          border-radius: 40px;
+        }
+        
+        .title {
+          font-size: 5em;
+        }
+        
+        .logo {
+          font-size: 6em;
+        }
+        
+        .section-title {
+          font-size: 3em;
+        }
+        
+        .section-content {
+          font-size: 1.8em;
+          line-height: 2;
+        }
+        
+        .nav-button {
+          padding: 25px 40px;
+          font-size: 1.8em;
+          min-width: 350px;
+          border-radius: 35px;
+        }
+        
+        .highlight {
+          padding: 6px 14px;
+          font-size: 1.6em;
+          border-radius: 8px;
+        }
+      }
+
+      /* Enhanced animated background particles for music vibe */
+      .particles-container {
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%221%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.1%22/%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2280%22%20r%3D%220.5%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.05%22/%3E%3Ccircle%20cx%3D%2280%22%20cy%3D%2220%22%20r%3D%220.5%22%20fill%3D%22%23ffffff%22%20opacity%3D%220.05%22/%3E%3C/svg%3E');
-        animation: float 10s infinite linear;
-        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .particle {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        animation: float 15s infinite linear;
+      }
+
+      /* Increase particle count for high-resolution displays */
+      @media (min-width: 1921px) {
+        .particle {
+          animation-duration: 25s; /* Slower animation for larger screens */
+        }
       }
 
       @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
+        0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
       }
 
       .container {
@@ -54,120 +186,293 @@
       /* Header styling */
       .header {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
+        padding-top: 20px;
+        animation: fadeInDown 1s ease-out;
       }
 
       .logo {
         font-size: 3em;
-        color: #FFD93D;
-        margin-bottom: 10px;
-        text-shadow: 0 0 10px rgba(255, 217, 61, 0.8);
+        color: var(--accent3);
+        margin-bottom: 15px;
+        text-shadow: 0 0 20px rgba(255, 217, 61, 0.8);
+        animation: pulse 3s infinite;
+        display: inline-block;
+        background: linear-gradient(45deg, var(--accent), var(--accent2), #45B7D1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
       }
 
       .title {
         font-size: 2.5em;
-        font-weight: bold;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1);
+        font-weight: 800;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        background: linear-gradient(45deg, var(--accent), var(--accent2), #45B7D1);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         margin-bottom: 10px;
+        letter-spacing: 1px;
       }
 
       .subtitle {
-        font-size: 1.2em;
+        font-size: 1.3em;
         opacity: 0.9;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
+        font-weight: 500;
       }
 
-      /* Terms content styling */
+      /* Enhanced terms content styling */
       .terms-content {
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(10px);
-        border-radius: 15px;
-        padding: 30px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        background: rgba(10, 10, 20, 0.85);
+        backdrop-filter: blur(15px);
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        margin-bottom: 30px;
+        margin-bottom: 40px;
+        animation: fadeInUp 1s ease-out 0.2s both;
       }
 
       .section {
-        margin-bottom: 25px;
+        margin-bottom: 35px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        animation: fadeIn 0.8s ease-out both;
+      }
+
+      .section:last-of-type {
+        border-bottom: none;
       }
 
       .section-title {
-        font-size: 1.5em;
-        color: #4ECDC4;
-        margin-bottom: 10px;
-        border-bottom: 2px solid #5865F2;
-        padding-bottom: 5px;
+        font-size: 1.7em;
+        color: var(--accent2);
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+        border-bottom: 3px solid var(--primary);
+        display: inline-block;
+        font-weight: 700;
+        position: relative;
+      }
+
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background: var(--accent);
+        transition: var(--transition);
+      }
+
+      .section:hover .section-title::after {
+        width: 100%;
       }
 
       .section-content {
-        line-height: 1.6;
-        font-size: 1em;
+        line-height: 1.7;
+        font-size: 1.1em;
+      }
+
+      .section-content p {
+        margin-bottom: 15px;
+      }
+
+      .section-content ul {
+        margin-left: 25px;
+        margin-bottom: 15px;
+      }
+
+      .section-content li {
+        margin-bottom: 10px;
+        position: relative;
+        padding-left: 10px;
+      }
+
+      .section-content li::before {
+        content: '•';
+        color: var(--accent);
+        font-weight: bold;
+        position: absolute;
+        left: -18px;
+        font-size: 1.3em;
       }
 
       .highlight {
-        background: linear-gradient(45deg, #5865F2, #7289DA);
-        padding: 2px 6px;
-        border-radius: 4px;
-        font-weight: bold;
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        padding: 3px 8px;
+        border-radius: 6px;
+        font-weight: 600;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
       }
 
       .contact-info {
         text-align: center;
-        margin-top: 20px;
-        padding-top: 20px;
+        margin-top: 30px;
+        padding-top: 30px;
         border-top: 1px solid rgba(255, 255, 255, 0.2);
+        animation: fadeIn 1s ease-out 0.6s both;
       }
 
       .contact-link {
-        color: #4ECDC4;
+        color: var(--accent2);
         text-decoration: none;
-        transition: color 0.3s ease;
+        transition: var(--transition);
+        font-weight: 600;
+        position: relative;
+      }
+
+      .contact-link::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent);
+        transition: var(--transition);
       }
 
       .contact-link:hover {
-        color: #FF6B6B;
-        text-decoration: underline;
+        color: var(--accent);
       }
 
-      /* Navigation buttons */
+      .contact-link:hover::after {
+        width: 100%;
+      }
+
+      /* Enhanced navigation buttons */
       .nav-buttons {
         display: flex;
         justify-content: center;
-        gap: 15px;
-        margin-top: 20px;
+        gap: 20px;
+        margin-top: 30px;
+        flex-wrap: wrap;
       }
 
       .nav-button {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 12px 20px;
-        background: linear-gradient(45deg, #5865F2, #7289DA);
-        color: #ffffff;
+        padding: 15px 25px;
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        color: var(--light);
         text-decoration: none;
         border-radius: 25px;
-        font-size: 1em;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        font-size: 1.1em;
+        font-weight: 600;
+        transition: var(--transition);
+        box-shadow: 0 4px 15px rgba(88, 101, 242, 0.4);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        min-width: 200px;
+      }
+
+      .nav-button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, var(--accent), var(--accent2));
+        transition: var(--transition);
+        z-index: -1;
+      }
+
+      .nav-button:hover::before {
+        left: 0;
       }
 
       .nav-button:hover {
-        background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 4px 12px rgba(255, 107, 107, 0.5);
+        transform: translateY(-5px) scale(1.03);
+        box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
       }
 
       .nav-button i {
-        margin-right: 8px;
+        margin-right: 10px;
+        font-size: 1.2em;
       }
 
-      /* Responsive adjustments */
+      /* Scroll to top button */
+      .scroll-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .scroll-top.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .scroll-top:hover {
+        transform: translateY(-5px);
+        background: linear-gradient(45deg, var(--accent), var(--accent2));
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      @keyframes fadeInUp {
+        from { 
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to { 
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInDown {
+        from { 
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to { 
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Stagger animation for sections */
+      .section:nth-child(1) { animation-delay: 0.3s; }
+      .section:nth-child(2) { animation-delay: 0.4s; }
+      .section:nth-child(3) { animation-delay: 0.5s; }
+      .section:nth-child(4) { animation-delay: 0.6s; }
+      .section:nth-child(5) { animation-delay: 0.7s; }
+      .section:nth-child(6) { animation-delay: 0.8s; }
+      .section:nth-child(7) { animation-delay: 0.9s; }
+
+      /* Responsive adjustments for smaller screens */
       @media (max-width: 768px) {
         .container {
           width: 95%;
@@ -176,11 +481,15 @@
         .title {
           font-size: 2em;
         }
+        .logo {
+          font-size: 2.5em;
+        }
         .terms-content {
-          padding: 20px;
+          padding: 25px;
+          border-radius: 15px;
         }
         .section-title {
-          font-size: 1.3em;
+          font-size: 1.4em;
         }
         .nav-buttons {
           flex-direction: column;
@@ -190,11 +499,38 @@
           width: 100%;
           max-width: 300px;
         }
+        .scroll-top {
+          bottom: 20px;
+          right: 20px;
+          width: 45px;
+          height: 45px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .title {
+          font-size: 1.8em;
+        }
+        .subtitle {
+          font-size: 1.1em;
+        }
+        .terms-content {
+          padding: 20px;
+        }
+        .section-title {
+          font-size: 1.3em;
+        }
+        .section-content {
+          font-size: 1em;
+        }
       }
     </style>
   </head>
 
   <body>
+    <!-- Animated Background Particles -->
+    <div class="particles-container" id="particles"></div>
+
     <div class="container">
       <!-- Header -->
       <div class="header">
@@ -304,6 +640,72 @@
         </a>
       </div>
     </div>
-  </body>
 
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+      // Create animated particles with 8K optimization
+      function createParticles() {
+        const container = document.getElementById('particles');
+        const particleCount = window.innerWidth > 1920 ? 80 : 30; // More particles for high-res displays
+        
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.classList.add('particle');
+          
+          // Random properties
+          const size = Math.random() * 15 + 5;
+          const left = Math.random() * 100;
+          const animationDuration = Math.random() * 25 + 15;
+          const animationDelay = Math.random() * 5;
+          
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.left = `${left}vw`;
+          particle.style.animationDuration = `${animationDuration}s`;
+          particle.style.animationDelay = `${animationDelay}s`;
+          
+          container.appendChild(particle);
+        }
+      }
+      
+      // Scroll to top functionality
+      function setupScrollTop() {
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+          if (window.pageYOffset > 300) {
+            scrollTopBtn.classList.add('active');
+          } else {
+            scrollTopBtn.classList.remove('active');
+          }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+      
+      // High-resolution image optimization
+      function optimizeForHighRes() {
+        // Check if we're on a high-resolution display
+        if (window.devicePixelRatio > 1) {
+          console.log('High-resolution display detected: ', window.devicePixelRatio);
+        }
+      }
+      
+      // Initialize everything when page loads
+      document.addEventListener('DOMContentLoaded', () => {
+        createParticles();
+        setupScrollTop();
+        optimizeForHighRes();
+      });
+    </script>
+  </body>
 </html>
