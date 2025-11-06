@@ -1,47 +1,170 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" href="moody music bot.png" type="image/png" 
+    <link rel="icon" href="moody music bot.png" type="image/png">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Syne&display=swap" />
-    <!-- Added Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- 8K Optimized Meta Tags -->
+    <meta name="theme-color" content="#5865F2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
     <title>MOODY - Discord Music Bot</title>
     <style>
+      :root {
+        --primary: #5865F2;
+        --secondary: #7289DA;
+        --accent: #FF6B6B;
+        --accent2: #4ECDC4;
+        --accent3: #FFD93D;
+        --dark: #1a1a2e;
+        --darker: #0f0f1a;
+        --light: #ffffff;
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 16px; /* Base font size for 1080p */
+      }
+
       body {
-        background: linear-gradient(135deg, rgba(88, 101, 242, 0.8), rgba(114, 137, 218, 0.6), rgba(255, 107, 107, 0.4)), url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80');
+        background: linear-gradient(135deg, rgba(88, 101, 242, 0.8), rgba(114, 137, 218, 0.6), rgba(255, 107, 107, 0.4)), 
+                    url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&auto=format&fit=crop&w=3840&q=80');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
         font-family: "Syne", sans-serif;
-        margin: 0;
-        padding: 0;
         min-height: 100vh;
-        color: #ffffff;
+        color: var(--light);
         overflow-x: hidden;
+        line-height: 1.6;
       }
 
-      /* Animated background particles for music vibe */
-      body::before {
-        content: '';
-        position: absolute;
+      /* 8K Media Query - Scale up for ultra-high resolution */
+      @media (min-width: 1921px) and (min-height: 1081px) {
+        html {
+          font-size: 20px; /* Scale up base font size for 4K+ */
+        }
+        
+        .container {
+          max-width: 800px;
+        }
+        
+        .profile-img {
+          width: 200px;
+          height: 200px;
+          border-width: 8px;
+        }
+        
+        .bio {
+          font-size: 2.4em;
+        }
+        
+        .music-icon {
+          font-size: 3.5em;
+        }
+        
+        .link {
+          padding: 20px;
+          font-size: 1.3em;
+        }
+        
+        .links-container {
+          max-width: 500px;
+          gap: 20px;
+        }
+        
+        .footer {
+          max-width: 800px;
+          padding: 30px;
+        }
+      }
+
+      /* 8K Media Query - Further scaling for true 8K */
+      @media (min-width: 7681px) {
+        html {
+          font-size: 32px;
+        }
+        
+        .container {
+          max-width: 1200px;
+        }
+        
+        .profile-img {
+          width: 300px;
+          height: 300px;
+          border-width: 12px;
+        }
+        
+        .bio {
+          font-size: 3.6em;
+        }
+        
+        .music-icon {
+          font-size: 5em;
+        }
+        
+        .link {
+          padding: 30px;
+          font-size: 2em;
+          border-radius: 40px;
+        }
+        
+        .links-container {
+          max-width: 700px;
+          gap: 30px;
+        }
+        
+        .footer {
+          max-width: 1200px;
+          padding: 50px;
+          border-radius: 30px;
+        }
+      }
+
+      /* Enhanced animated background particles for music vibe */
+      .particles-container {
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/><circle cx="20" cy="80" r="0.5" fill="%23ffffff" opacity="0.05"/><circle cx="80" cy="20" r="0.5" fill="%23ffffff" opacity="0.05"/></svg>');
-        animation: float 10s infinite linear;
-        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+
+      .particle {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        animation: float 15s infinite linear;
+      }
+
+      /* Increase particle count for high-resolution displays */
+      @media (min-width: 1921px) {
+        .particle {
+          animation-duration: 25s; /* Slower animation for larger screens */
+        }
       }
 
       @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
+        0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
       }
 
       .container {
@@ -66,8 +189,8 @@
 
       .music-icon {
         font-size: 2.5em;
-        color: #FFD93D;
-        background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1);
+        color: var(--accent3);
+        background: linear-gradient(45deg, var(--accent), var(--accent2), #45B7D1);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -92,12 +215,13 @@
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        border: 5px solid #5865F2;
+        border: 5px solid var(--primary);
         box-shadow: 0 0 20px rgba(88, 101, 242, 0.8), 0 4px 8px rgba(0, 0, 0, 0.3);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
         animation: pulse 2s infinite;
         display: block;
         margin: 0 auto;
+        object-fit: cover;
       }
 
       .profile-img:hover {
@@ -115,7 +239,7 @@
         font-size: 1.8em;
         font-weight: bold;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        background: linear-gradient(45deg, #FF6B6B, #4ECDC4, #45B7D1);
+        background: linear-gradient(45deg, var(--accent), var(--accent2), #45B7D1);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -141,8 +265,8 @@
         align-items: center;
         justify-content: center;
         padding: 15px;
-        background: linear-gradient(45deg, #5865F2, #7289DA);
-        color: #ffffff;
+        background: linear-gradient(45deg, var(--primary), var(--secondary));
+        color: var(--light);
         text-decoration: none;
         border-radius: 25px;
         font-size: 1.1em;
@@ -169,7 +293,7 @@
       }
 
       .link:hover {
-        background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+        background: linear-gradient(45deg, var(--accent), var(--accent2));
         transform: translateY(-3px) scale(1.02);
         box-shadow: 0 4px 12px rgba(255, 107, 107, 0.5);
       }
@@ -181,14 +305,40 @@
 
       /* Special styling for music-related links */
       .link.music {
-        background: linear-gradient(45deg, #FF6B6B, #FFD93D);
+        background: linear-gradient(45deg, var(--accent), var(--accent3));
       }
 
       .link.music:hover {
-        background: linear-gradient(45deg, #FFD93D, #6BCF7F);
+        background: linear-gradient(45deg, var(--accent3), #6BCF7F);
       }
 
-      /* Responsive adjustments */
+      /* Footer for additional content */
+      .footer {
+        width: 90%;
+        max-width: 600px;
+        margin: 50px auto 0;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        color: white;
+        text-align: center;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        z-index: 1;
+      }
+
+      .footer h3 {
+        margin-bottom: 10px;
+        color: var(--accent2);
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      /* Responsive adjustments for smaller screens */
       @media (max-width: 768px) {
         .container {
           width: 95%;
@@ -216,35 +366,25 @@
         }
       }
 
-      /* Footer for additional content */
-      .footer {
-        width: 90%;
-        max-width: 600px;
-        margin: 50px auto 0;
-        padding: 20px;
-        background: rgba(0, 0, 0, 0.7);
-        backdrop-filter: blur(10px);
-        color: white;
-        text-align: center;
-        border-radius: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        position: relative;
-        z-index: 1;
-      }
-
-      .footer h3 {
-        margin-bottom: 10px;
-        color: #4ECDC4;
-      }
-
-      .footer p {
-        margin: 0;
+      @media (max-width: 480px) {
+        .bio {
+          font-size: 1.2em;
+        }
+        .music-icon {
+          font-size: 1.8em;
+        }
+        .link {
+          padding: 10px;
+          font-size: 0.9em;
+        }
       }
     </style>
   </head>
 
   <body>
+    <!-- Animated Background Particles -->
+    <div class="particles-container" id="particles"></div>
+
     <div class="container">
       <!-- Attractive Music Logos -->
       <div class="music-logos">
@@ -261,6 +401,7 @@
         src="https://cdn.discordapp.com/attachments/1345073010444603472/1435781699572072528/moody_music_bot.png?ex=690d3768&is=690be5e8&hm=4641c889d6916bdca8e8fd0fd03fd5d56b0aa95965eb7fbf030c420fc900a8a4&&?size=4096"
         alt="MOODY Bot Profile"
         class="profile-img"
+        onerror="this.src='https://cdn.discordapp.com/avatars/1358631207222509796/b79b6bd7a22adc90d49106c329ff6324.png?size=4096'"
       />
 
       <!-- Bio -->
@@ -282,26 +423,63 @@
         <a href="https://www.youtube.com/@WYNOISLIVE." class="link" target="_blank">
           <i class="fab fa-youtube"></i> YOUTUBE
         </a>
-        <a href="TERMS&CONDITIONS.html"class="link">
-          <i class="fas"></i> TERMS & CONDITIONS
+        <a href="TERMS&CONDITIONS.html" class="link">
+          <i class="fas fa-file-contract"></i> TERMS & CONDITIONS
         </a>
-        <a href="privacypolicy.html"class="link">
-          <i class="fas"></i> PRIVACY POLICY
+        <a href="privacypolicy.html" class="link">
+          <i class="fas fa-shield-alt"></i> PRIVACY POLICY
         </a>
       </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <h3>About Moody Music</h3>
+        <p>High-quality music bot for Discord with premium features and crystal clear audio</p>
+      </div>
+    </div>
+
+    <script>
+      // Create animated particles with 8K optimization
+      function createParticles() {
+        const container = document.getElementById('particles');
+        const particleCount = window.innerWidth > 1920 ? 80 : 30; // More particles for high-res displays
+        
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.classList.add('particle');
+          
+          // Random properties
+          const size = Math.random() * 15 + 5;
+          const left = Math.random() * 100;
+          const animationDuration = Math.random() * 25 + 15;
+          const animationDelay = Math.random() * 5;
+          
+          particle.style.width = `${size}px`;
+          particle.style.height = `${size}px`;
+          particle.style.left = `${left}vw`;
+          particle.style.animationDuration = `${animationDuration}s`;
+          particle.style.animationDelay = `${animationDelay}s`;
+          
+          container.appendChild(particle);
+        }
+      }
+
+      // High-resolution image optimization
+      function optimizeForHighRes() {
+        // Check if we're on a high-resolution display
+        if (window.devicePixelRatio > 1) {
+          console.log('High-resolution display detected: ', window.devicePixelRatio);
+          
+          // You could implement additional optimizations here
+          // For example, loading higher resolution images
+        }
+      }
+      
+      // Initialize everything when page loads
+      document.addEventListener('DOMContentLoaded', () => {
+        createParticles();
+        optimizeForHighRes();
+      });
+    </script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
