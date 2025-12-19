@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     
-    <!-- 8K Optimized Meta Tags -->
     <meta name="theme-color" content="#5865F2">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -570,20 +569,17 @@
   </head>
 
   <body>
-    <!-- Animated Background Particles -->
     <div class="particles-container" id="particles"></div>
 
     <div class="container">
-      <!-- Header -->
       <div class="header">
         <div class="logo">
           <i class="fas fa-shield-alt"></i>
         </div>
         <h1 class="title">PRIVACY POLICY</h1>
-        <p class="subtitle">Last Updated: <span class="highlight">3 NOVEMBER 2025</span></p>
+        <p class="subtitle">Last Updated: <span class="highlight">20 DECEMBER 2025</span></p>
       </div>
 
-      <!-- Policy Content -->
       <div class="policy-content">
         <div class="section">
           <h2 class="section-title">1. Introduction</h2>
@@ -609,37 +605,42 @@
               <tbody>
                 <tr>
                   <td>Discord Server IDs</td>
-                  <td>To store server-specific preferences and settings</td>
+                  <td>To store server-specific preferences (prefixes, 24/7 mode)</td>
                   <td>Until bot removal from server</td>
                 </tr>
                 <tr>
                   <td>Discord User IDs</td>
-                  <td>To provide personalized features and track usage</td>
+                  <td>To track song play statistics and provide personalized history</td>
                   <td>Until user requests deletion</td>
                 </tr>
                 <tr>
                   <td>Voice Channel IDs</td>
-                  <td>To connect to and manage music playback</td>
-                  <td>Session-only (not stored)</td>
+                  <td>To manage music playback and 24/7 connections</td>
+                  <td>Stored if 24/7 mode is enabled</td>
                 </tr>
                 <tr>
-                  <td>Music Query Data</td>
-                  <td>To process and play requested music</td>
-                  <td>Not stored after processing</td>
+                  <td>Playback History</td>
+                  <td>Stores the last 100 tracks played per server to enable "Previous Track" features</td>
+                  <td>Limited to last 100 entries per server</td>
                 </tr>
                 <tr>
-                  <td>Command Usage Logs</td>
-                  <td>For debugging and service improvement</td>
-                  <td>30 days maximum</td>
+                  <td>AI Prompts</td>
+                  <td>User text queries sent to generate song recommendations</td>
+                  <td>Transient (Processed by Google Gemini)</td>
+                </tr>
+                <tr>
+                  <td>User Statistics</td>
+                  <td>Aggregate count of songs played by specific users</td>
+                  <td>Permanent (until deletion request)</td>
                 </tr>
               </tbody>
             </table>
             
             <p>We do <span class="highlight">NOT</span> collect:</p>
             <ul>
-              <li>Personal messages or private conversations</li>
+              <li>Personal messages or private conversations (outside of commands)</li>
               <li>Payment information (the bot is free to use)</li>
-              <li>Location data or IP addresses</li>
+              <li>Exact Location data or IP addresses (though our web server may log basic access info)</li>
               <li>Sensitive personal information</li>
             </ul>
           </div>
@@ -652,10 +653,10 @@
             <ul>
               <li>Provide, maintain, and improve the Moody Music service</li>
               <li>Process music playback requests and commands</li>
-              <li>Store user and server preferences</li>
-              <li>Monitor service performance and troubleshoot issues</li>
+              <li>Store user and server preferences (e.g., custom prefixes, equalizers)</li>
+              <li>Monitor service performance and troubleshoot issues via logs</li>
               <li>Ensure compliance with our Terms of Service</li>
-              <li>Communicate important service updates</li>
+              <li>Generate AI-powered music recommendations based on your prompts</li>
             </ul>
             <p>We do not sell, trade, or otherwise transfer your information to third parties for marketing or advertising purposes.</p>
           </div>
@@ -666,9 +667,8 @@
           <div class="section-content">
             <p>We implement appropriate technical and organizational security measures designed to protect your information:</p>
             <ul>
-              <li>Data is stored on secure servers with limited access</li>
-              <li>Encryption is used for data in transit</li>
-              <li>Regular security assessments are performed</li>
+              <li>Data is stored in a secured SQLite database</li>
+              <li>Encryption is used for data in transit (HTTPS/TLS)</li>
               <li>Access to user data is restricted to essential personnel only</li>
             </ul>
             <p>While we strive to protect your information, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security.</p>
@@ -680,9 +680,9 @@
           <div class="section-content">
             <p>We may share information only in the following circumstances:</p>
             <ul>
-              <li><span class="highlight">With Service Providers:</span> We may share limited data with trusted third parties who assist us in operating our service, conducting our business, or servicing you, so long as those parties agree to keep this information confidential.</li>
-              <li><span class="highlight">For Legal Compliance:</span> We may disclose your information where required to do so by law or in response to valid requests by public authorities.</li>
-              <li><span class="highlight">To Protect Rights:</span> We may share information when we believe disclosure is necessary to protect our rights, protect your safety or the safety of others, or investigate fraud.</li>
+              <li><span class="highlight">With Service Providers:</span> We may share limited data with trusted third parties who assist us in operating our service.</li>
+              <li><span class="highlight">For Legal Compliance:</span> We may disclose your information where required to do so by law.</li>
+              <li><span class="highlight">To Protect Rights:</span> We may share information when we believe disclosure is necessary to protect our rights or the safety of others.</li>
             </ul>
           </div>
         </div>
@@ -690,11 +690,13 @@
         <div class="section">
           <h2 class="section-title">6. Third-Party Services</h2>
           <div class="section-content">
-            <p>Moody Music integrates with third-party services:</p>
+            <p>Moody Music integrates with several third-party services to function. Data shared with them is subject to their respective privacy policies:</p>
             <ul>
-              <li><span class="highlight">Discord:</span> Our service operates within Discord's platform and is subject to Discord's Privacy Policy.</li>
-              <li><span class="highlight">YouTube:</span> We access content through YouTube's API services, subject to YouTube's Terms of Service.</li>
-              <li><span class="highlight">Audio Sources:</span> We may access audio from various sources to fulfill music requests.</li>
+              <li><span class="highlight">Discord:</span> Our service operates within Discord's platform.</li>
+              <li><span class="highlight">Google Gemini (AI):</span> User prompts for song recommendations are processed by Google's Generative AI API.</li>
+              <li><span class="highlight">YouTube:</span> We access content and recommendations through YouTube's services.</li>
+              <li><span class="highlight">Lyrics Providers:</span> We fetch lyrics from Genius and LrcLib APIs.</li>
+              <li><span class="highlight">Metadata Providers:</span> We query JioSaavn, Gaana, and iTunes APIs for song metadata and trivia games.</li>
             </ul>
             <p>We are not responsible for the privacy practices of these third-party services. We encourage you to review their privacy policies.</p>
           </div>
@@ -707,8 +709,8 @@
             <ul>
               <li><span class="highlight">Access:</span> You can request information about what data we have stored about you.</li>
               <li><span class="highlight">Correction:</span> You can request correction of inaccurate data.</li>
-              <li><span class="highlight">Deletion:</span> You can request deletion of your personal data.</li>
-              <li><span class="highlight">Opt-out:</span> You can stop using the bot at any time, which will cease further data collection.</li>
+              <li><span class="highlight">Deletion:</span> You can request deletion of your personal data (e.g., song history, user stats).</li>
+              <li><span class="highlight">Opt-out:</span> You can stop using the bot at any time.</li>
             </ul>
             <p>To exercise these rights, please contact us at <span class="highlight">wynoislive1@gmail.com</span>.</p>
           </div>
@@ -726,8 +728,7 @@
           <h2 class="section-title">9. Changes to This Privacy Policy</h2>
           <div class="section-content">
             <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
-            <p>We will also provide notice through our official support server and via bot status messages for material changes.</p>
-            <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+            <p>You are advised to review this Privacy Policy periodically for any changes.</p>
           </div>
         </div>
 
@@ -741,7 +742,6 @@
         </div>
       </div>
 
-      <!-- Navigation Buttons -->
       <div class="nav-buttons">
         <a href="https://moodymusicbot.pages.dev/" class="nav-button">
           <i class="fas fa-home"></i> Back to Home
@@ -755,7 +755,6 @@
       </div>
     </div>
 
-    <!-- Scroll to Top Button -->
     <div class="scroll-top" id="scrollTop">
       <i class="fas fa-chevron-up"></i>
     </div>
